@@ -1,0 +1,20 @@
+<p>
+  <strong>Name:</strong>
+  <%= @scientist.name %>
+</p>
+
+<p>
+  <strong>Field of Study:</strong>
+  <%= @scientist.field_of_study %>
+</p>
+
+<p>
+  <strong> Planets Visited:</strong> <br>
+  <% @scientist.planets.each_with_index do |planet, index| %>
+    <%= index+1 %>.  <%= link_to planet.name, planet_path(planet) %> <br>
+    <% end %>
+
+</p>
+
+<hr>
+<%= link_to 'Back', scientists_path %>
